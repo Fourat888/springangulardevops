@@ -62,14 +62,34 @@ pipeline {
         	}
         	}
         	}
-        	
-        	
+        	stage('Build image') {
+           	steps {
+       		 sh "docker build -t fourat8/frontend Spring"
+       		}
+       		}
+    		
+ 			stage('Push image') {
+ 			steps {
+ 			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+ 			
+        	 sh "docker push fourat8/frontend"
+        	}
+        	}
+        	}
+        	stage('pull image') {
+ 			steps {
+ 			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+ 			
+        	 sh "docker pull fourat8/frontend:latest"
+        	}
+        	}
+        	}
         	stage('Docker compose') {
             steps {
                 sh 'docker-compose up -d ' 
             }
             }
-            
+
         	stage('Test unitaire') {
             steps {
                     sh 'mvn -f Spring/pom.xml test'

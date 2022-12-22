@@ -20,6 +20,17 @@ services:
       - '8040:8040'
     image: fourat8/projetdevops-backend
     restart: unless-stopped
-    
+  frontend:
+    depends_on:
+      - backend
+    # The name of the service
+    container_name: frontend # Container name
+    image: fourat8/frontend
+    restart: unless-stopped
+    volumes:
+      # Volume binding
+      - './Angular:/usr/src/app'
+    ports:
+      - '4200:4200' # Port mapping  
 volumes:
   mysql-container3: { }
