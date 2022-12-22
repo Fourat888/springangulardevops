@@ -66,7 +66,7 @@ pipeline {
         	
         	stage('Docker compose') {
             steps {
-                sh 'docker-compose Spring up -d ' 
+                sh 'docker-compose -f Spring up -d ' 
             }
             }
         	
