@@ -4,8 +4,8 @@ pipeline {
             stage('Checkout GIT'){
                 steps {
                     echo 'Pulling...';
-                        git branch: 'fourat',
-                        url : 'https://github.com/eskander1998/ProjetDevops.git';
+                        git branch: 'master',
+                        url : 'https://github.com/Fourat888/springangulardevops.git';
                 }
             }
            
@@ -18,13 +18,13 @@ pipeline {
             
             stage('MVN CLEAN') {
             steps {
-                sh 'mvn clean'
+                sh 'mvn Spring/pom.xml clean'
                  
             }
             }
             stage('MVN COMPILE') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn Spring/pom.xml compile'
                  
             }
             }
@@ -44,7 +44,7 @@ pipeline {
                       
        		stage('NEXUS') {
             steps {
-                sh 'mvn deploy -DskipTests'
+                sh 'mvn Spring/pom.xml deploy -DskipTests'
                   
             }
         	}
