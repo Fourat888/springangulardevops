@@ -29,18 +29,6 @@ pipeline {
             }
             }
             
-            
-            
-          
-            
-            
-       	   
-       	    
-			
-			
-       	  
-		
-            
                       
        		stage('NEXUS') {
             steps {
@@ -54,7 +42,7 @@ pipeline {
             
             stage('Build image') {
            	steps {
-       		 sh "docker build -t fourat8/backend ."
+       		 sh "docker build -t fourat8/backend Spring/Dockerfile"
        		}
        		}
     		
