@@ -42,7 +42,7 @@ pipeline {
             
             stage('Build image') {
            	steps {
-       		 sh "docker build -t fourat8/backend Spring/Dockerfile"
+       		 sh "docker build . -t fourat8/backend Spring/Dockerfile"
        		}
        		}
     		
