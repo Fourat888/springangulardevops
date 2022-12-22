@@ -69,7 +69,12 @@ pipeline {
                 sh 'docker-compose up -d ' 
             }
             }
-        	
+            
+        	stage('Test unitaire') {
+            steps {
+                    sh 'mvn -f Spring/pom.xml test'
+            }
+            }
         
         	stage('SonarQube analysis 1') {
             steps {
@@ -77,11 +82,7 @@ pipeline {
             }
             }
     		
-    		stage('Test unitaire') {
-            steps {
-                    sh 'mvn Spring test'
-            }
-            }
+    		
             
     		 
            
