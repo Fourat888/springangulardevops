@@ -18,7 +18,7 @@ pipeline {
             
             stage('MVN CLEAN') {
             steps {
-                sh 'mvn clean'
+                sh 'mvn -f Spring/pom.xml clean'
                  
             }
             }
