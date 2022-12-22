@@ -40,13 +40,13 @@ pipeline {
            	
 			
             
-            stage('Build image') {
+            stage('Build image back') {
            	steps {
        		 sh "docker build -t fourat8/backend Spring"
        		}
        		}
     		
- 			stage('Push image') {
+ 			stage('Push image back') {
  			steps {
  			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
  			
@@ -54,7 +54,7 @@ pipeline {
         	}
         	}
         	}
-        	stage('pull image') {
+        	stage('pull image back') {
  			steps {
  			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
  			
@@ -62,13 +62,13 @@ pipeline {
         	}
         	}
         	}
-        	stage('Build image') {
+        	stage('Build image front') {
            	steps {
        		 sh "docker build -t fourat8/frontend Spring"
        		}
        		}
     		
- 			stage('Push image') {
+ 			stage('Push image front') {
  			steps {
  			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
  			
@@ -76,7 +76,7 @@ pipeline {
         	}
         	}
         	}
-        	stage('pull image') {
+        	stage('pull image front') {
  			steps {
  			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
  			
