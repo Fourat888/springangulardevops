@@ -44,7 +44,7 @@ pipeline {
                       
        		stage('NEXUS') {
             steps {
-                sh 'mvn Spring/pom.xml deploy -DskipTests'
+                sh 'mvn -f Spring/pom.xml deploy -DskipTests'
                   
             }
         	}
