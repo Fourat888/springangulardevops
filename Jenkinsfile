@@ -18,13 +18,13 @@ pipeline {
             
             stage('MVN CLEAN') {
             steps {
-                sh 'mvn Spring/pom.xml clean'
+                sh 'mvn clean'
                  
             }
             }
             stage('MVN COMPILE') {
             steps {
-                sh 'mvn Spring/pom.xml compile'
+                sh 'mvn -f Spring/pom.xml compile'
                  
             }
             }
