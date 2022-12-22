@@ -66,20 +66,20 @@ pipeline {
         	
         	stage('Docker compose') {
             steps {
-                sh 'docker-compose up -d' 
+                sh 'docker-compose up -d Spring' 
             }
             }
         	
         
         	stage('SonarQube analysis 1') {
             steps {
-                sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=fourat'
+                sh 'mvn Spring sonar:sonar -Dsonar.login=admin -Dsonar.password=fourat'
             }
             }
     		
     		stage('Test unitaire') {
             steps {
-                    sh 'mvn test'
+                    sh 'mvn Spring test'
             }
             }
             
