@@ -29,7 +29,7 @@ services:
     restart: unless-stopped
     volumes:
       # Volume binding
-      - './Angular:/usr/src/app'
+      - './Angular:Z/src/app'
     ports:
       - '4200:4200' # Port mapping  
 volumes:
