@@ -40,7 +40,7 @@ pipeline {
            	
 			stage('Build image front') {
            	steps {
-       		 sh "docker build -t fourat8/frontend Angular"
+       		 sh "docker build -t fourat8/frontend crudtuto-Front"
        		}
        		}
     		

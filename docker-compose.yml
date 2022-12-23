@@ -27,10 +27,10 @@ services:
     container_name: frontend # Container name
     image: fourat8/frontend
     restart: always
-    build: ./Angular
+    build: ./crudtuto-Front
     ports:
       - '4200:4200' # Port mapping 
     volumes:
-      - '.Angular:/home/serveur'
+      - '.crudtuto-Front:/home/serveur'
 volumes:
   mysql-container3: { }
