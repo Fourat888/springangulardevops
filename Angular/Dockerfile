@@ -1,4 +1,4 @@
-FROM node:16.17.0
+FROM node:16.13.2
 RUN mkdir -p /home/server
 WORKDIR /home/serveur
 COPY . /home/serveur
