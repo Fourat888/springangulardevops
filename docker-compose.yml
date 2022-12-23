@@ -21,11 +21,8 @@ services:
     image: fourat8/backend
     restart: unless-stopped
   frontend:
-    depends_on:
-      - backend
     # The name of the service
     container_name: frontend # Container name
-    restart: always
     build: ./crudtuto-Front
     ports:
       - '4200:4200' # Port mapping 
