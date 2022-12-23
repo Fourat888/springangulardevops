@@ -26,7 +26,7 @@ services:
     # The name of the service
     container_name: frontend # Container name
     image: fourat8/frontend
-    restart: no
+    restart: unless-stopped
     ports:
       - '4200:85' # Port mapping 
 volumes:
