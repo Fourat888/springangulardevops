@@ -25,7 +25,6 @@ services:
       - backend
     # The name of the service
     container_name: frontend # Container name
-    image: fourat8/frontend
     restart: always
     build: ./crudtuto-Front
     ports:
