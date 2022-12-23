@@ -1,4 +1,4 @@
-version: "2.2"
+version: "3"
 
 services:
   mysql-container3:
@@ -21,12 +21,13 @@ services:
     image: fourat8/backend
     restart: unless-stopped
   frontend:
+    depends_on:
+      - backend
     # The name of the service
     container_name: frontend # Container name
-    build: ./crudtuto-Front
+    image: fourat8/frontend
+    restart: no
     ports:
-      - '4200:4200' # Port mapping 
-    volumes:
-      - '.crudtuto-Front:/home/serveur'
+      - '4200:85' # Port mapping 
 volumes:
   mysql-container3: { }
