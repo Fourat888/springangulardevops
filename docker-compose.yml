@@ -27,9 +27,6 @@ services:
     container_name: frontend # Container name
     image: fourat8/frontend
     restart: unless-stopped
-    volumes:
-      # Volume binding
-      - './Angular:Z/src/app'
     ports:
       - '4200:4200' # Port mapping  
 volumes:
