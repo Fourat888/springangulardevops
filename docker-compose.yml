@@ -26,8 +26,11 @@ services:
     # The name of the service
     container_name: frontend # Container name
     image: fourat8/frontend
-    restart: unless-stopped
+    restart: always
     ports:
-      - '4200:4200' # Port mapping  
+      - '4200:4200' # Port mapping 
+    volumes:
+      - './home/serveur'
+      - './home/serveur/node_modules' 
 volumes:
   mysql-container3: { }
