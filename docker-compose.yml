@@ -18,7 +18,7 @@ services:
     container_name: backend
     ports:
       - '8040:8040'
-    image: fourat8/projetdevops-backend
+    image: fourat8/backend
     restart: unless-stopped
   frontend:
     depends_on:
