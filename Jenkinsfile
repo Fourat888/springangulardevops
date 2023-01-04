@@ -46,11 +46,11 @@ pipeline {
        		}
        		}
     		
- 			stage('Push image back') {
- 			steps {
- 			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+ 		stage('Push image back') {
+ 		steps {
+ 		  withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
  			
-        	 sh "docker push fourat8/backend"
+        	    sh "docker push fourat8/backend"
         	}
         	}
         	}
