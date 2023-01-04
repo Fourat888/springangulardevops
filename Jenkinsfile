@@ -30,7 +30,7 @@ pipeline {
             }
             
                       
-       		stage('NEXUS') {
+       	stage('NEXUS') {
             steps {
                 sh 'mvn -f Spring/pom.xml deploy -DskipTests'
                   
@@ -39,7 +39,13 @@ pipeline {
             
            	
 		
-            
+            stage('Login Dockerhub') {
+
+			steps {
+			sh 'docker login -u fourat8 -p Ratfat113'
+			}
+			}
+		
             stage('Build image back') {
            	steps {
        		 sh "docker build -t fourat8/backend Spring"
@@ -48,18 +54,16 @@ pipeline {
     		
  		stage('Push image back') {
  		steps {
- 		  withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
  			
         	    sh "docker push fourat8/backend"
-        	}
+        	
         	}
         	}
         	stage('pull image back') {
  			steps {
- 			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
  			
         	 sh "docker pull fourat8/backend:latest"
-        	}
+        	
         	}
         	}
         	
