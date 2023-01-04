@@ -38,28 +38,7 @@ pipeline {
         	}
             
            	
-			stage('Build image front') {
-           	steps {
-       		 sh "docker build -t fourat8/frontend crudtuto-Front"
-       		}
-       		}
-    		
- 			stage('Push image front') {
- 			steps {
- 			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
- 			
-        	 sh "docker push fourat8/frontend"
-        	}
-        	}
-        	}
-        	stage('pull image front') {
- 			steps {
- 			           	 withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
- 			
-        	 sh "docker pull fourat8/frontend:latest"
-        	}
-        	}
-        	}
+		
             
             stage('Build image back') {
            	steps {
