@@ -1,7 +1,11 @@
 FROM node:16.13.2
-RUN mkdir -p /home/server
-WORKDIR /home/serveur
-COPY . /home/serveur
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install and cache app dependencies
+COPY package.json /app/package.json
 RUN npm install
-EXPOSE 4200
-CMD ["ng", "serve"]
+RUN npm install -g @angular/cli@7.3.9
+COPY . /app
+EXPOSE 80
+CMD ng serve --host 0.0.0.0

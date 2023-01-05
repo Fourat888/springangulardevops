@@ -25,9 +25,12 @@ services:
       - backend
     # The name of the service
     container_name: frontend # Container name
-    image: fourat8/frontend
+    build: "crudtuto-Front"
     restart: unless-stopped
     ports:
-      - '4200:85' # Port mapping 
+      - '90:90' # Port mapping
+     volumes:
+      - '.:/app'
+      - '/app/node_modules'
 volumes:
   mysql-container3: { }
