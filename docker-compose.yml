@@ -30,7 +30,7 @@ services:
     ports:
       - '4200:4200' # Port mapping
     volumes:
-      - './app'
+      - '/app'
       - '/app/node_modules'
 volumes:
   mysql-container3: { }
