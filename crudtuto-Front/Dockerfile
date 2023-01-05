@@ -7,13 +7,14 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Copy dependency definitions
-COPY package*.json /app/
+COPY package*.json ./
 
+RUN ls -al
 # Install dependecies
 RUN npm install
 
 # Get all the code needed to run the app
-COPY . /app/
+# COPY . /app/
 
 # Expose the port the app runs in
 EXPOSE 4200
