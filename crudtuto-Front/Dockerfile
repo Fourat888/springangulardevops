@@ -7,7 +7,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Copy dependency definitions
-COPY package*.json ./
+COPY crudtuto-Front/package*.json ./
 
 RUN ls -al
 # Install dependecies

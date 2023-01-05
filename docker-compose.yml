@@ -20,11 +20,11 @@ services:
       - '8040:8040'
     image: fourat8/backend
     restart: unless-stopped
-  frontend4:
+  frontend5:
     depends_on:
       - backend
     # The name of the service
-    container_name: frontend4 # Container name
+    container_name: frontend5 # Container name
     build: "crudtuto-Front"
     restart: unless-stopped
     ports:
