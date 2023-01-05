@@ -28,7 +28,7 @@ services:
     build: "crudtuto-Front"
     restart: unless-stopped
     ports:
-      - '90:90' # Port mapping
+      - '4200:4200' # Port mapping
     volumes:
       - '.:/app'
       - '/app/node_modules'
